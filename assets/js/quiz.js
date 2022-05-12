@@ -89,8 +89,6 @@ const validateChoice = (event) => {
     // create and attach element to display validaton response
     validationDisplay = document.createElement("div");
     container.appendChild(validationDisplay);
-
-    console.log(event.target.textContent + 'clicked');
     // capture clicked value
     const selected = event.target.textContent;
     // validate clicked value
@@ -102,6 +100,16 @@ const validateChoice = (event) => {
         validationDisplay.textContent = "Sorry, that is incorrect. The correct choice was " + questions[currentQuestion].answer
     }
 
+    // advance to next question
+    currentQuestion++;
+
+    // continue or end quiz based on current question position in array
+    if (currentQuestion <= questions.length) {
+        displayQuestion(currentQuestion);
+    } else {
+        validationDisplay.textContent = '';
+        endQuiz();
+    }
 }
 
 // function to handle end of quiz
