@@ -121,7 +121,7 @@ const validateChoice = (event) => {
 const endQuiz = () => {
     // calculate final score
     const finalTime = time
-    finalscore = finalTime + score
+    finalScore = finalTime + score
 
     // clear last question and timer
     container.innerHTML = ''
@@ -148,7 +148,7 @@ const endQuiz = () => {
     correctCountDisplay.textContent = "You selected " + correct + "/" + questions.length + " answers correctly."
     timeDisplay.textContent = "You finished with " + finalTime + " seconds left."
     scoreDisplay.textContent = "You received " + score + " points for answering questions correctly."
-    finalScoreDisplay.textContent = "Your final score is " + finalscore + " points!"
+    finalScoreDisplay.textContent = "Your final score is " + finalScore + " points!"
     initialsLabel.textContent = "Please enter your initals to be saved with your score: "
     submitBtn.textContent = "Submit";
 
@@ -163,7 +163,26 @@ const endQuiz = () => {
     container.appendChild(submitBtn);
 
     // event listener to submit initials input and score
+    submitBtn.addEventListener("click", () => {
+        if (!initialsInput.value) {
+            alert("Please enter your initials");
+        } else {
+            // get current array of saved scores and parse
+            var savedScores = JSON.parse(localStorage.getItem('savedScores')) || []
+            // create object that holds new score to be saved
+            const newScore = {
+                initials: initialsInput.value,
+                score: finalScore
+            }
+            // push newScore to savedScores array
+            savedScores.push(newScore);
+            // stringify and set updated savedScores array to localStorage
+            localStorage.setItem("savedScores", JSON.stringify(savedScores));
 
+            // redirect to high scores page to view saved score
+            // window.location.replace('./scores.html');
+        }
+    });
 };
 
 // event listener to start quiz on button click
