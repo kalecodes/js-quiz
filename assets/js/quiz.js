@@ -87,9 +87,9 @@ const displayQuestion = () => {
 
 // function to handle answer validation
 const validateChoice = (event) => {
-    // create and attach element to display validaton response
+    // create element to display validaton response
     validationDisplay = document.createElement("div");
-    content.appendChild(validationDisplay);
+    
     // capture clicked value
     const selected = event.target.textContent;
     // validate clicked value
@@ -107,6 +107,8 @@ const validateChoice = (event) => {
     // continue or end quiz based on current question position in array
     if (currentQuestion <= questions.length) {
         displayQuestion(currentQuestion);
+        // append validation response after new question is generated (prevents clearing)
+        content.appendChild(validationDisplay);
     } else {
         validationDisplay.textContent = '';
         endQuiz();
