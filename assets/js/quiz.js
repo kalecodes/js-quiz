@@ -62,6 +62,7 @@ const choiceElement = document.getElementById('choice');
 // define function variables
 var time = 80;
 var penalty = 10;
+var correct = 0;
 var score = 0;
 var currentQuestion = 0;
 
@@ -94,6 +95,7 @@ const validateChoice = (event) => {
     const selected = event.target.textContent;
     // validate clicked value
     if (selected == questions[currentQuestion].answer) {
+        correct++;
         score = score + 5;
         validationDisplay.textContent = questions[currentQuestion].answer + " is correct!"
     } else {
@@ -124,7 +126,7 @@ const endQuiz = () => {
         // finished prompt header
     const endHeader = document.createElement('h2');
         // score div
-    const scoreDisplay = document.createElement('div');
+    const scoreDisplay = document.createElement('h3');
         // initials label
     const initialsLabel = document.createElement('label');
         // initials input
@@ -135,10 +137,13 @@ const endQuiz = () => {
     submitBtn.setAttribute("type", "submit");
 
     // asign content to generated elements
-
+    endHeader.textContent = "Congrats!";
+    scoreDisplay.textContent = "You selected " + correct + "/" + questions.length + " answers correctly."
+    initialsLabel.textContent = "Please enter your initals to be saved with your score: "
+    submitBtn.textContent = "Submit";
 
     // append elements to container
-
+    
 
     // calculate final score
         // remaining time + score
