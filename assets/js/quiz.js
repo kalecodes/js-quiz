@@ -180,7 +180,7 @@ const endQuiz = () => {
             localStorage.setItem("savedScores", JSON.stringify(savedScores));
 
             // redirect to high scores page to view saved score
-            // window.location.replace('./scores.html');
+            window.location.replace('./scores.html');
         }
     });
 };
