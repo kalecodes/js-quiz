@@ -119,14 +119,21 @@ const validateChoice = (event) => {
 
 // function to handle end of quiz
 const endQuiz = () => {
+    // calculate final score
+    finalscore = time + score
+
     // clear last question and timer
     questionDisplay.innerHTML = ''
     timer.textContent = 'Quiz complete'
+
     // create elements to display new content
         // finished prompt header
     const endHeader = document.createElement('h2');
         // score div
+    const correctCountDisplay = document.createElement('h3');
+    const timeDisplay = document.createElement('h3');
     const scoreDisplay = document.createElement('h3');
+    const finalScoreDisplay = document.createElement('h2');
         // initials label
     const initialsLabel = document.createElement('label');
         // initials input
@@ -138,7 +145,10 @@ const endQuiz = () => {
 
     // asign content to generated elements
     endHeader.textContent = "Congrats!";
-    scoreDisplay.textContent = "You selected " + correct + "/" + questions.length + " answers correctly."
+    correctCountDisplay.textContent = "You selected " + correct + "/" + questions.length + " answers correctly."
+    timeDisplay.textContent = "You finished with " + time + "seconds left."
+    scoreDisplay.textContent = "You received " + score + " points for answering quesitons correctly."
+    finalScoreDisplay.textContent = "Your final score is " + finalscore + " points!"
     initialsLabel.textContent = "Please enter your initals to be saved with your score: "
     submitBtn.textContent = "Submit";
 
@@ -148,9 +158,6 @@ const endQuiz = () => {
     content.appendChild(initialsLabel);
     content.appendChild(initialsInput);
     content.appendChild(submitBtn);
-
-    // calculate final score
-        // remaining time + score
 
     // event listener to submit initials input and score
 
