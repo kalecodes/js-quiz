@@ -59,7 +59,9 @@ const content = document.getElementById('quiz-content');
 const startBtn = document.getElementById('start');
 
 // define function variables
-
+var time = 80;
+var penalty = 10;
+var score = 0;
 
 // function to conditionally render questions
 
