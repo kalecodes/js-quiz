@@ -143,7 +143,11 @@ const endQuiz = () => {
     submitBtn.textContent = "Submit";
 
     // append elements to container
-    
+    content.appendChild(endHeader);
+    content.appendChild(scoreDisplay);
+    content.appendChild(initialsLabel);
+    content.appendChild(initialsInput);
+    content.appendChild(submitBtn);
 
     // calculate final score
         // remaining time + score
