@@ -3,13 +3,18 @@ const scoresList = document.getElementById('scoresList');
 const homeBtn = document.getElementById('home');
 const clearBtn = document.getElementById('clear');
 
-// get stored scores from localstorage
-    // parse values back into objects
+// get and parse stored scores from localstorage
+var scores = localStorage.getItem(JSON.parse(savedScores)) || [];
 
 // loop through scores to create elements
+scores.forEach(score => {
     // create element
+    const scoreItem = document.createElement('li');
     // assign values
+    scoreItem.textContent = score.initials + " scored " + score.score + " points!";
     // append to page
+    scoresList.appendChild(scoreItem);
+})
 
 
 // home button event listener
