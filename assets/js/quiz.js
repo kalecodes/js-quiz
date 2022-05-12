@@ -95,9 +95,10 @@ const validateChoice = (event) => {
 // event listener to start quiz on button click
 startBtn.addEventListener("click", () => {
     setInterval(() => {
-        time--;
-        timer.textContent = "Time Remaining: " + time;
-        if (time === 0) {
+        if (time > 0) {
+            time--;
+            timer.textContent = "Time Remaining: " + time;
+        } else {
             endQuiz();
             timer.textContent = "Time's up!"
         }
