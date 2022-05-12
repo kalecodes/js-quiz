@@ -122,10 +122,19 @@ const endQuiz = () => {
     timer.textContent = 'Quiz complete'
     // create elements to display new content
         // finished prompt header
+    const endHeader = document.createElement('h2');
         // score div
+    const scoreDisplay = document.createElement('div');
         // initials label
+    const initialsLabel = document.createElement('label');
         // initials input
+    const initialsInput = document.createElement('input');
+    initialsInput.setAttribute("type", "text");
         // submit button
+    const submitBtn = document.createElement('button');
+    submitBtn.setAttribute("type", "submit");
+
+    // asign content to generated elements
 
 
     // append elements to container
