@@ -73,3 +73,13 @@ var score = 0;
 
 
 // event listener to start quiz on button click
+startBtn.addEventListener("click", () => {
+    setInterval(() => {
+        time--;
+        timer.textContent = "Time Remaining: " + time;
+        if (time === 0) {
+            endQuiz();
+            timer.textContent = "Time's up!"
+        }
+    }, 1000)
+})
