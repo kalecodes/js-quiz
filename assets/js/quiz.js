@@ -86,7 +86,22 @@ const displayQuestion = () => {
 
 // function to handle answer validation
 const validateChoice = (event) => {
+    // create and attach element to display validaton response
+    validationDisplay = document.createElement("div");
+    container.appendChild(validationDisplay);
+
     console.log(event.target.textContent + 'clicked');
+    // capture clicked value
+    const selected = event.target.textContent;
+    // validate clicked value
+    if (selected == questions[currentQuestion].answer) {
+        score = score + 5;
+        validationDisplay.textContent = questions[currentQuestion].answer + " is correct!"
+    } else {
+        time = time - penalty;
+        validationDisplay.textContent = "Sorry, that is incorrect. The correct choice was " + questions[currentQuestion].answer
+    }
+
 }
 
 // function to handle end of quiz
