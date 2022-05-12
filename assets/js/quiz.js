@@ -72,6 +72,7 @@ const displayQuestion = () => {
     // create ul to display question
     const questionDisplay = document.createElement('ul');
     questionDisplay.textContent = questions[currentQuestion].question
+    // append element to page
     content.appendChild(questionDisplay)
     // create li to display each choice
     questions[currentQuestion].choices.forEach(choice => {
@@ -88,7 +89,7 @@ const displayQuestion = () => {
 const validateChoice = (event) => {
     // create and attach element to display validaton response
     validationDisplay = document.createElement("div");
-    container.appendChild(validationDisplay);
+    content.appendChild(validationDisplay);
     // capture clicked value
     const selected = event.target.textContent;
     // validate clicked value
