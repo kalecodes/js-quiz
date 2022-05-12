@@ -70,7 +70,7 @@ const startBtn = document.getElementById('start');
 const choiceElement = document.getElementById('choice');
 
 // define function variables
-var time = 50;
+var time = 60;
 var penalty = 7;
 var correct = 0;
 var score = 0;
