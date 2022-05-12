@@ -14,7 +14,7 @@ scores.forEach(score => {
     scoreItem.textContent = score.initials + " scored " + score.score + " points!";
     // append to page
     scoresList.appendChild(scoreItem);
-})
+});
 
 
 // home button event listener
@@ -23,5 +23,9 @@ homeBtn.addEventListener("click", () => {
 });
 
 // clear scores event listener
+clearBtn.addEventListener("click", () => {
     // clear localStorage
+    localStorage.clear();
     // reload page to reflect changes
+    window.location.reload();
+});
