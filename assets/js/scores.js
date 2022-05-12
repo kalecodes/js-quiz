@@ -4,7 +4,7 @@ const homeBtn = document.getElementById('home');
 const clearBtn = document.getElementById('clear');
 
 // get and parse stored scores from localstorage
-var scores = localStorage.getItem(JSON.parse(savedScores)) || [];
+var scores = JSON.parse(localStorage.getItem('savedScores')) || [];
 
 // loop through scores to create elements
 scores.forEach(score => {
