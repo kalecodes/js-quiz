@@ -116,7 +116,22 @@ const validateChoice = (event) => {
 }
 
 // function to handle end of quiz
+const endQuiz = () => {
+    // clear last question and timer
+    questionDisplay.innerHTML = ''
+    timer.textContent = 'Quiz complete'
+    // create elements to display new content
 
+
+    // append elements to container
+
+
+    // calculate final score
+
+
+    // event listener to submit initials input and score
+
+};
 
 // event listener to start quiz on button click
 startBtn.addEventListener("click", () => {
