@@ -81,13 +81,14 @@ const displayQuestion = () => {
     // clear starter content
     content.innerHTML = '';
     // create ul to display question
-    const questionDisplay = document.createElement('ul');
+    const questionDisplay = document.createElement('div');
     questionDisplay.textContent = questions[currentQuestion].question
     // append element to page
     content.appendChild(questionDisplay)
     // create li to display each choice
     questions[currentQuestion].choices.forEach(choice => {
-        const choiceDisplay = document.createElement('li');
+        const choiceDisplay = document.createElement('button');
+        choiceDisplay.setAttribute("class", "d-block btn btn-info p-2 my-2")
         choiceDisplay.textContent = choice;
         choiceDisplay.setAttribute('id', 'choice');
         questionDisplay.appendChild(choiceDisplay);
@@ -138,11 +139,11 @@ const endQuiz = () => {
 
     // create elements to display new content
         // finished prompt header
-    const endHeader = document.createElement('h2');
+    const endHeader = document.createElement('h1');
         // score div
-    const correctCountDisplay = document.createElement('h3');
-    const timeDisplay = document.createElement('h3');
-    const scoreDisplay = document.createElement('h3');
+    const correctCountDisplay = document.createElement('h4');
+    const timeDisplay = document.createElement('h4');
+    const scoreDisplay = document.createElement('h4');
     const finalScoreDisplay = document.createElement('h2');
         // initials label
     const initialsLabel = document.createElement('label');
@@ -152,6 +153,7 @@ const endQuiz = () => {
         // submit button
     const submitBtn = document.createElement('button');
     submitBtn.setAttribute("type", "submit");
+    submitBtn.setAttribute("class", "btn btn-info btn-lg ml-5")
 
     // asign content to generated elements
     endHeader.textContent = "Congrats!";

@@ -9,7 +9,8 @@ var scores = JSON.parse(localStorage.getItem('savedScores')) || [];
 // loop through scores to create elements
 scores.forEach(score => {
     // create element
-    const scoreItem = document.createElement('li');
+    const scoreItem = document.createElement('div');
+    scoreItem.setAttribute("class", "p-2 border border-secondary rounded my-2")
     // assign values
     scoreItem.textContent = score.initials + " scored " + score.score + " points!";
     // append to page
