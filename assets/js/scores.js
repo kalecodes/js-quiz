@@ -18,7 +18,9 @@ scores.forEach(score => {
 
 
 // home button event listener
-
+homeBtn.addEventListener("click", () => {
+    window.location.replace('./index.html')
+});
 
 // clear scores event listener
     // clear localStorage
