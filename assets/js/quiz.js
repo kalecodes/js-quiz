@@ -60,8 +60,8 @@ const startBtn = document.getElementById('start');
 const choiceElement = document.getElementById('choice');
 
 // define function variables
-var time = 80;
-var penalty = 10;
+var time = 50;
+var penalty = 7;
 var correct = 0;
 var score = 0;
 var currentQuestion = 0;
@@ -96,7 +96,7 @@ const validateChoice = (event) => {
     // validate clicked value
     if (selected == questions[currentQuestion].answer) {
         correct++;
-        score = score + 5;
+        score = score + 3;
         validationDisplay.textContent = questions[currentQuestion].answer + " is correct!"
     } else {
         time = time - penalty;
@@ -107,7 +107,7 @@ const validateChoice = (event) => {
     currentQuestion++;
 
     // continue or end quiz based on current question position in array
-    if (currentQuestion <= questions.length) {
+    if (currentQuestion <= questions.length - 1) {
         displayQuestion(currentQuestion);
         // append validation response after new question is generated (prevents clearing)
         content.appendChild(validationDisplay);
@@ -120,11 +120,11 @@ const validateChoice = (event) => {
 // function to handle end of quiz
 const endQuiz = () => {
     // calculate final score
-    finalscore = time + score
+    const finalTime = time
+    finalscore = finalTime + score
 
     // clear last question and timer
-    questionDisplay.innerHTML = ''
-    timer.textContent = 'Quiz complete'
+    container.innerHTML = ''
 
     // create elements to display new content
         // finished prompt header
@@ -146,18 +146,21 @@ const endQuiz = () => {
     // asign content to generated elements
     endHeader.textContent = "Congrats!";
     correctCountDisplay.textContent = "You selected " + correct + "/" + questions.length + " answers correctly."
-    timeDisplay.textContent = "You finished with " + time + "seconds left."
-    scoreDisplay.textContent = "You received " + score + " points for answering quesitons correctly."
+    timeDisplay.textContent = "You finished with " + finalTime + " seconds left."
+    scoreDisplay.textContent = "You received " + score + " points for answering questions correctly."
     finalScoreDisplay.textContent = "Your final score is " + finalscore + " points!"
     initialsLabel.textContent = "Please enter your initals to be saved with your score: "
     submitBtn.textContent = "Submit";
 
     // append elements to container
-    content.appendChild(endHeader);
-    content.appendChild(scoreDisplay);
-    content.appendChild(initialsLabel);
-    content.appendChild(initialsInput);
-    content.appendChild(submitBtn);
+    container.appendChild(endHeader);
+    container.appendChild(correctCountDisplay);
+    container.appendChild(timeDisplay);
+    container.appendChild(scoreDisplay);
+    container.appendChild(finalScoreDisplay);
+    container.appendChild(initialsLabel);
+    container.appendChild(initialsInput);
+    container.appendChild(submitBtn);
 
     // event listener to submit initials input and score
 
