@@ -121,13 +121,18 @@ const endQuiz = () => {
     questionDisplay.innerHTML = ''
     timer.textContent = 'Quiz complete'
     // create elements to display new content
+        // finished prompt header
+        // score div
+        // initials label
+        // initials input
+        // submit button
 
 
     // append elements to container
 
 
     // calculate final score
-
+        // remaining time + score
 
     // event listener to submit initials input and score
 
