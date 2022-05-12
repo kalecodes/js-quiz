@@ -53,7 +53,10 @@ const questions = [
 ]
 
 // define DOM constants
-
+const container = document.getElementById('quiz-container');
+const timer = document.getElementById('timer');
+const content = document.getElementById('quiz-content');
+const startBtn = document.getElementById('start');
 
 // define function variables
 
