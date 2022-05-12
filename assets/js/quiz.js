@@ -1,54 +1,64 @@
 // questions array
 const questions = [
     {
-        question: 'question1',
-        choices: ['choice1','choice2','choice3','choice 4'],
-        answer: 'choice1'
+        question: 'Which HTML tag does JavaScript go in?',
+        choices: ['<head>...</head>','<script>...</script>','<meta>...</meta>','<body>...</body>'],
+        answer: '<script>...</script>'
     },
     {
-        question: 'question2',
-        choices: ['choice2','choice3','choice4','choice1'],
-        answer: 'choice2'
+        question: 'Which of the following does JavaScript ignore?',
+        choices: ['tabs','spaces','new-lines','all of the above'],
+        answer: 'all of the above'
     },
     {
-        question: '',
-        choices: ['','','',''],
+        question: 'Which of the following is not a JavaScript data type?',
+        choices: ['Undefined','Boolean','Float','Object'],
+        answer: 'Float'
+    },
+    {
+        question: 'Which symbol is used to make comments in JavaScript',
+        choices: ['//','/* */','{ }','\\'],
+        answer: '//'
+    },
+    {
+        question: 'Which of the following is not a pop up box used in JavaScript',
+        choices: ['Confirm','Pop','Prompt','Alert'],
+        answer: 'Pop'
+    },
+    {
+        question: '"var" and "function" are ________ in JavaScript.',
+        choices: ['Loops','Keywords','Declaration Statements','Variables'],
         answer: ''
     },
     {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
+        question: 'Where are script tags placed in HTML documents?',
+        choices: ['title','head and body','doctype tag','body and title'],
+        answer: 'head and body'
     },
     {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
+        question: 'JavaScript was developed by which company?',
+        choices: ['Microsoft','Google','Netscape','Oracle'],
+        answer: 'Netscape'
     },
     {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
+        question: 'With which attribute can you include external JavaScript code?',
+        choices: ['link','src','ext','script'],
+        answer: 'src'
     },
     {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
+        question: 'Which function is used to serialize an object into a JSON string?',
+        choices: ['convert()','stringify()','push()','parse()'],
+        answer: 'stringify'
     },
     {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
+        question: 'Which keyword can be used to declare a datatype to be constant',
+        choices: ['const', 'let', 'var', 'constant'],
+        answer: 'const'
     },
     {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
-    },
-    {
-        question: '',
-        choices: ['','','',''],
-        answer: ''
+        question: 'Which keyword is used to declare a function asynchronous',
+        choices: ['await', 'async', 'setTimeout', 'wait'],
+        answer: 'async'
     }
 ]
 
